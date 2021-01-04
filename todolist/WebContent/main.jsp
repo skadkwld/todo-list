@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="include/lib.jsp" %>
-<title>Just Do</title>
+<%@ include file='../include/head.jsp' %>
 <%-- <c:choose>
 	<c:when test="${sessionScope.userId eq 'user' }">
 		<c:redirect url="/todo/listTodo.jsp"/>
@@ -13,4 +13,4 @@
 </c:choose>
   --%>
   
-  <a href = "/todolist/todo/listTodo">todo list 보기</a>
+  <a href = "/todolist/todo">todo list 보기</a>

@@ -5,6 +5,7 @@
 	pageContext.setAttribute("todoList",request.getAttribute("todoList"));
 %>
 <div class="container">
+	<%@ include file='../include/head.jsp' %>
 	<table class="table">
 		<thead class="thead-light">
 			<tr>
@@ -15,16 +16,14 @@
 			<c:choose>
 				<c:when test="${todoList.size() > 0}">
 					<c:forEach var="todo" items="${todoList}">
-						
 						<tr>
 							<td>${todo.todoDate }</td>
 							<td>${todo.title }</td>
 							<td>
 								<a class="btn btn-primary" 
-									href="viewTodo?todoNum=${todo.todoNum}">자세히</a>
+									href="todo/viewTodo?todoNum=${todo.todoNum}">자세히</a>
 							</td>
 						</tr>
-						
 					</c:forEach>
 				</c:when>
 				<c:otherwise>
@@ -33,5 +32,7 @@
 			</c:choose>
 		</tbody>
 	</table>
+	<a class="btn btn-outline-primary" href = "todo/addTodo.jsp">추가</a>
 </div> 
-<a class="btn btn-primary" href = "addTodo.jsp">추가</a>
+
+

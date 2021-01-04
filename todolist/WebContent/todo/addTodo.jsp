@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/lib.jsp" %>
 <div class="container">
-	<form action="addTodoProc.jsp" method="post">
+	<%@ include file='../include/head.jsp' %>
+	<form action="../todo" method="post">
 		<label>할일 : </label>
 		<input type="text" name="title" required/>
 		<label>날짜 : </label>

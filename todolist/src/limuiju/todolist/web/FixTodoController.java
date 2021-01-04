@@ -52,12 +52,12 @@ public class FixTodoController extends HttpServlet {
 		}
 		
 		if(result > 0) {
-			request.setAttribute("msg", "할일 수정 성공했습니다.");
+			response.sendRedirect("../todo?msgId=121");
 		}else {
-			request.setAttribute("msg", "할일 수정 실패했습니다.");
+			response.sendRedirect("../todo?msgId=120");
 		}
 		
-		response.sendRedirect("viewTodo?todoNum=" + todoNum_);
+		//response.sendRedirect("../todo");
 	}
 }
 	
