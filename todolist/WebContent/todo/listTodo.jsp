@@ -27,7 +27,7 @@
 					</c:forEach>
 				</c:when>
 				<c:otherwise>
-					<tr><td colspan="4" class="text-center">사원이 없습니다.</td></tr>
+					<tr><td colspan="4" class="text-center">할일목록이 비었습니다.</td></tr>
 				</c:otherwise>
 			</c:choose>
 		</tbody>

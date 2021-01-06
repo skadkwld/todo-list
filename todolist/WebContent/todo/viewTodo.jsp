@@ -6,7 +6,7 @@
 %>
 <div class="container">
 	<%@ include file='../include/head.jsp' %>
-	<form action="fixTodo" method="post">
+	<form method="post">
 		<div class="row form-group">
 			<label for="title">Title : </label>&nbsp;
 			<input type="text" id="title"  
@@ -18,7 +18,8 @@
 		</div>
 		<div class="row">
 			<a href="../todo" class="btn btn-outline-secondary">목록</a>
-			<button type="submit" class="btn btn-outline-primary">수정</button>
+			<button type="submit" class="btn btn-outline-primary" formaction="fixTodo">수정</button>
+			<button type="submit" class="btn btn-outline-primary" formaction="../done">완료</button>
 			<button type="button" class="btn btn-outline-danger"
 				data-toggle="modal" data-target="#delModal">삭제</button>
 		</div>

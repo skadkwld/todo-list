@@ -1,11 +1,6 @@
 package limuiju.todolist.web;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import limuiju.todolist.dao.TodoDao;
+import limuiju.todolist.dao.TodoDaoImpl;
 import limuiju.todolist.domain.Todo;
 
 @WebServlet("/todo/viewTodo")
@@ -22,33 +19,10 @@ public class ViewTodoController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		Todo todo = new Todo();
+		TodoDao todoDao = new TodoDaoImpl();
 		String todoNum = request.getParameter("todoNum");
 		
-		String url = "jdbc:oracle:thin:@127.0.0.1:1521/xe";
-		String sql = "select * from todos where todo_num ='" + todoNum + "' ";
-		
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url,"todo","todo");
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(sql);
-			
-			if(rs.next()) {
-				todo.setTodoNum(rs.getInt("todo_num"));
-				todo.setTitle(rs.getString("title"));
-				todo.setTodoDate(rs.getDate("todo_date"));
-				todo.setUserId(rs.getString("user_id"));
-			}
-			
-			rs.close();
-			st.close();
-			con.close();
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		Todo todo = todoDao.selectTodo(todoNum);
 		
 		request.setAttribute("todo", todo);
 		

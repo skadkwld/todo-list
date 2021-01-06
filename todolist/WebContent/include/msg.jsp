@@ -26,5 +26,13 @@
 	<c:when test='${requestScope.msgId == 130}'>
 		<c:set var='msg' value='삭제 실패 : 할일을 삭제하지 못했습니다'/>
 	</c:when>
+	
+	<c:when test='${requestScope.msgId == 211}'>
+		<c:set var='msg' value='추가 성공 : 한일을 추가했습니다'/>
+	</c:when>
+	
+	<c:when test='${requestScope.msgId == 210}'>
+		<c:set var='msg' value='추가 실패 : 한일을 추가하지 못했습니다.'/>
+	</c:when>
 
 </c:choose>

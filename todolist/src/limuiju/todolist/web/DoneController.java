@@ -1,10 +1,6 @@
 package limuiju.todolist.web;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,43 +9,48 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import limuiju.todolist.dao.DoneDao;
+import limuiju.todolist.dao.DoneDaoImpl;
 import limuiju.todolist.dao.TodoDao;
 import limuiju.todolist.dao.TodoDaoImpl;
-import limuiju.todolist.domain.Todo;
+import limuiju.todolist.domain.Done;
 
-@WebServlet("/todo")
-public class TodoController extends HttpServlet {
-       
+@WebServlet("/done")
+public class DoneController extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		TodoDao todoDao = new TodoDaoImpl();
-		List<Todo> todoList = todoDao.selectTodoList();
+		DoneDao doneDao = new DoneDaoImpl();
+		List<Done> doneList = doneDao.selectDoneList();
 				
-		request.setAttribute("todoList", todoList);
-		request.setAttribute("job", 1);
+		request.setAttribute("doneList", doneList);
+		request.setAttribute("job", 2);
 		request.setAttribute("msgId", request.getParameter("msgId"));
 		
 		request
-		.getRequestDispatcher("todo/listTodo.jsp")
+		.getRequestDispatcher("done/listDone.jsp")
 		.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String title = request.getParameter("title");
-		String todoDate = request.getParameter("todoDate");
+		String todoNum = request.getParameter("todoNum");
+		String doneDate = request.getParameter("todoDate");
 		String userId = "eoaudehd0818@naver.com";
 		
 		TodoDao todoDao = new TodoDaoImpl();
+		DoneDao doneDao = new DoneDaoImpl();
 		
-		int result = todoDao.insertTodo(title, todoDate, userId);
+		todoDao.deleteTodo(todoNum);
+		int result = doneDao.insertDone(userId,doneDate,title);
 		
 		if(result > 0) {
-			response.sendRedirect("todo?msgId=111");
+			response.sendRedirect("done?msgId=211");
 		} else {
-			response.sendRedirect("todo?msgId=110");
+			response.sendRedirect("done?msgId=210");
 		}
-		
 	}
+
 }

@@ -14,10 +14,10 @@
 	<div class="col-4">
 		<nav>
 			<div class="nav nav-tabs nav-pills">
-				<a class="nav-link" tabindex="-1"
+				<a class="nav-link ${requestScope.job==1 ? 'active' : '' }" tabindex="-1"
 					href="/todolist/todo">&nbsp;Todo&nbsp;</a>
-				<a class="nav-link" tabindex="-1"
-					href="/todolist/">&nbsp;Done&nbsp;</a>
+				<a class="nav-link ${requestScope.job==2 ? 'active' : '' }" tabindex="-1"
+					href="/todolist/done">&nbsp;Done&nbsp;</a>
 			</div>
 		</nav>
 	</div>
