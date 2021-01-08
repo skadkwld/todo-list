@@ -56,15 +56,38 @@ public class TodoController extends HttpServlet {
 ##### 👉 예시로 TodoController 코드입니다. 이 컨트롤러와 jsp를 분리시켜 스파게티코드를 없애는데 집중했습니다. 
 ##### 👉 /todo에 get 요청이오면 리스트를 보여주고 post 요청이오면 
 
-##### 👉 리소스 별로 폴더를 구분하여 관리하였습니다 ( user 폴더는 유튜브를 보며 이메일 인증 로그인을 따라하였고 mvc2 패턴을 적용하지 못했습니다 ).
+##### 👉 리소스 별로 폴더를 구분하여 관리하였습니다 
 <img src="https://user-images.githubusercontent.com/49936855/103998291-3db8a500-51df-11eb-9c39-d8691f7d1655.png"/>
 
 #### 1. 로그인
 
-<img src="https://user-images.githubusercontent.com/49936855/103997199-1e6d4800-51de-11eb-99ca-bd8110d55aa8.png" style="width=150px"/>
+<img width="400" src="https://user-images.githubusercontent.com/49936855/103997199-1e6d4800-51de-11eb-99ca-bd8110d55aa8.png"/>
+
+#### 2. 회원가입
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104005205-1e724580-51e8-11eb-9097-97886f6483af.png"/>
+ - 이메일 인증 후 회원가입 완료
 
 #### 2. 할일 추가
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104003636-01d50e00-51e6-11eb-8575-8e779e021182.png"/>
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104003062-457b4800-51e5-11eb-9e62-bdfa1f481b1a.png"/>
+
 #### 3. 할일 수정
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104004010-93dd1680-51e6-11eb-8951-f98e62c1601c.png"/>
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104004167-c555e200-51e6-11eb-88a9-1450819dd355.png"/>
+
 #### 4. 할일 삭제
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104004292-eb7b8200-51e6-11eb-9866-a79450422c05.png"/>
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104004442-1b2a8a00-51e7-11eb-92bb-666716b2be9b.png"/>
+
 #### 5. 할일 완료 
 
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104004886-a441c100-51e7-11eb-943a-fe8237d5bfea.png"/>
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104005111-fa166900-51e7-11eb-9ed2-9e60dbb8bd7f.png"/>
