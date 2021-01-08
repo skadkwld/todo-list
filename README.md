@@ -66,7 +66,10 @@ public class TodoController extends HttpServlet {
 #### 2. 회원가입
 
 <img width="400" src="https://user-images.githubusercontent.com/49936855/104005205-1e724580-51e8-11eb-9097-97886f6483af.png"/>
- - 이메일 인증 후 회원가입 완료
+
+<img width="400" src="https://user-images.githubusercontent.com/49936855/104005602-b5d79880-51e8-11eb-9a1a-4d728a955b57.png"/>
+
+- 이메일 인증 후 회원가입 완료
 
 #### 2. 할일 추가
 
