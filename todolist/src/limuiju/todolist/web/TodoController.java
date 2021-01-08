@@ -1,10 +1,6 @@
 package limuiju.todolist.web;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -39,7 +35,8 @@ public class TodoController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String title = request.getParameter("title");
 		String todoDate = request.getParameter("todoDate");
-		String userId = "eoaudehd0818@naver.com";
+		String userId = (String)request.getSession()
+					.getAttribute("userId");
 		
 		TodoDao todoDao = new TodoDaoImpl();
 		

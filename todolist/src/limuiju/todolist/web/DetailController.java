@@ -12,9 +12,9 @@ import limuiju.todolist.dao.TodoDao;
 import limuiju.todolist.dao.TodoDaoImpl;
 import limuiju.todolist.domain.Todo;
 
-@WebServlet("/todo/viewTodo")
-public class ViewTodoController extends HttpServlet {
-       
+@WebServlet("/todo/detail")
+public class DetailController extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
@@ -30,5 +30,25 @@ public class ViewTodoController extends HttpServlet {
 		.getRequestDispatcher("viewTodo.jsp")
 		.forward(request, response);
 	}
-
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		String title = request.getParameter("title");
+		String todoDate = request.getParameter("todoDate");
+		String todoNum = request.getParameter("todoNum");
+		
+		TodoDao todoDao = new TodoDaoImpl();
+		
+		int result = todoDao.updateTodo(title, todoDate, todoNum);
+		
+		if(result > 0) {
+			response.sendRedirect("../todo?msgId=121");
+		}else {
+			response.sendRedirect("../todo?msgId=120");
+		}
+		
+	}
 }
+	

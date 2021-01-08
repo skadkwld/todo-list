@@ -38,7 +38,8 @@ public class DoneController extends HttpServlet {
 		String title = request.getParameter("title");
 		String todoNum = request.getParameter("todoNum");
 		String doneDate = request.getParameter("todoDate");
-		String userId = "eoaudehd0818@naver.com";
+		String userId = (String) request.getSession()
+				.getAttribute("userId");
 		
 		TodoDao todoDao = new TodoDaoImpl();
 		DoneDao doneDao = new DoneDaoImpl();

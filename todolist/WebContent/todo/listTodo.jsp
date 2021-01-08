@@ -5,7 +5,7 @@
 	pageContext.setAttribute("todoList",request.getAttribute("todoList"));
 %>
 <div class="container">
-	<%@ include file='../include/head.jsp' %>
+	<%@ include file='../include/mainHead.jsp' %>
 	<table class="table">
 		<thead class="thead-light">
 			<tr>
@@ -21,7 +21,7 @@
 							<td>${todo.title }</td>
 							<td>
 								<a class="btn btn-primary" 
-									href="todo/viewTodo?todoNum=${todo.todoNum}">자세히</a>
+									href="todo/detail?todoNum=${todo.todoNum}">자세히</a>
 							</td>
 						</tr>
 					</c:forEach>
@@ -33,6 +33,7 @@
 		</tbody>
 	</table>
 	<a class="btn btn-outline-primary" href = "todo/addTodo.jsp">추가</a>
+	<%@ include file='../include/footer.jsp' %>
 </div> 
 
 

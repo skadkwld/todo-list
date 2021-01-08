@@ -5,7 +5,7 @@
 	pageContext.setAttribute("doneList",request.getAttribute("doneList"));
 %>
 <div class="container">
-	<%@ include file='../include/head.jsp' %>
+	<%@ include file='../include/mainHead.jsp' %>
 	<table class="table">
 		<thead class="thead-light">
 			<tr>
@@ -28,6 +28,7 @@
 			</c:choose>
 		</tbody>
 	</table>
+	<%@ include file='../include/footer.jsp' %>
 </div> 
 
 
