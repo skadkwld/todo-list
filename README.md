@@ -54,7 +54,7 @@ public class TodoController extends HttpServlet {
 }
 ```
 ##### 👉 예시로 TodoController 코드입니다. 이 컨트롤러와 jsp를 분리시켜 스파게티코드를 없애는데 집중했습니다. 
-##### 👉 /todo에 get 요청이오면 리스트를 보여주고 post 요청이오면 
+##### 👉 /todo에 get 요청이오면 리스트를 보여주고 post 요청이오면 할일을 추가하는 작업을 진행합니다.
 
 ##### 👉 리소스 별로 폴더를 구분하여 관리하였습니다 
 <img src="https://user-images.githubusercontent.com/49936855/103998291-3db8a500-51df-11eb-9c39-d8691f7d1655.png"/>
